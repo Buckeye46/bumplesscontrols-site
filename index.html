@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bumpless LLC | Controls &amp; Commissioning</title>
-<meta name="description" content="Bumpless LLC commissions the control systems behind utility-scale battery storage, substations and critical power. Based in the Houston area, on site wherever the project is.">
+<meta name="description" content="Bumpless LLC architects, builds, tests and commissions the control systems behind utility-scale battery storage, substations and critical power: the full lifecycle, from hardware architecture to final turnover. Based in the Houston area.">
 <meta property="og:title" content="Bumpless LLC | Controls &amp; Commissioning">
-<meta property="og:description" content="Commissioning that makes the handoff a non-event: battery storage, substations and critical power.">
+<meta property="og:description" content="Controls and commissioning across the full lifecycle, from hardware architecture to final turnover: battery storage, substations and critical power.">
 <meta property="og:url" content="https://bumplesscontrols.com/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0f1b2d">
@@ -114,6 +114,19 @@
   .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
   .icon svg { width: 22px; height: 22px; }
 
+  .steps { display: grid; gap: 14px; list-style: none; margin: 0; padding: 0; }
+  @media (min-width: 640px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 980px) { .steps { grid-template-columns: repeat(5, 1fr); } }
+  .step { border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: 20px 18px; background: var(--bg); }
+  .step .num { font: 600 12px var(--mono); letter-spacing: 0.1em; color: var(--accent); }
+  .step h3 { margin: 8px 0 6px; font-size: 18px; letter-spacing: -0.01em; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .proof { margin-top: 28px; padding: 24px 26px; border-radius: 14px; background: var(--accent-soft); }
+  .proof .kicker { margin-bottom: 8px; }
+  .proof-text { margin: 0; font-size: 19px; line-height: 1.5; letter-spacing: -0.01em; max-width: 46em; }
+  .lifecycle-note { margin: 22px 0 0; color: var(--muted); max-width: 44em; }
+  .lifecycle-note strong { color: var(--ink); }
+
   .points { display: grid; gap: 28px 40px; }
   @media (min-width: 720px) { .points { grid-template-columns: 1fr 1fr; } }
   .point { border-left: 3px solid var(--accent); padding-left: 18px; }
@@ -155,6 +168,7 @@
       <b>Bumpless</b><span>LLC</span>
     </a>
     <nav class="links" aria-label="Main">
+      <a href="#lifecycle">Lifecycle</a>
       <a href="#services">Services</a>
       <a href="#approach">How I work</a>
       <a class="cta-link" href="#contact">Contact</a>
@@ -168,7 +182,7 @@
       <div>
         <p class="eyebrow">Controls &amp; commissioning &middot; Houston, Texas</p>
         <h1>Commissioning that makes the handoff a non&#8209;event.</h1>
-        <p class="lead">Bumpless LLC tests and commissions the control systems behind utility-scale battery storage, substations and critical power, so energization, testing and turnover stay on schedule.</p>
+        <p class="lead">Bumpless LLC architects, builds, tests and commissions the control systems behind utility-scale battery storage, substations and critical power. One firm from hardware architecture to final turnover, so nothing gets lost between phases.</p>
         <div class="actions">
           <a class="btn primary" href="mailto:dylan.davey@bumplesscontrols.com?subject=Project%20inquiry">Email Dylan</a>
           <a class="btn ghost" href="#services">See services</a>
@@ -200,25 +214,65 @@
     </div>
   </div>
 
-  <section id="services">
+  <section id="lifecycle">
+    <div class="wrap">
+      <p class="kicker">Full lifecycle</p>
+      <h2>From architecture to final turnover</h2>
+      <p class="intro">Most projects split controls across several hands: one firm lays out the hardware, another writes the logic, a third tests it, a fourth commissions it. Each handoff is where details get lost. Bumpless covers the whole path.</p>
+      <ol class="steps">
+        <li class="step">
+          <span class="num">01</span>
+          <h3>Architect</h3>
+          <p>Control system hardware architecture: controllers, I/O, networks and communications.</p>
+        </li>
+        <li class="step">
+          <span class="num">02</span>
+          <h3>Develop</h3>
+          <p>Power plant controller code built from the ground up, plus points lists, SCADA and HMI setup.</p>
+        </li>
+        <li class="step">
+          <span class="num">03</span>
+          <h3>Deploy &amp; validate</h3>
+          <p>Simulation, factory and site acceptance testing, point-to-point checkout, validation against requirements.</p>
+        </li>
+        <li class="step">
+          <span class="num">04</span>
+          <h3>Commission</h3>
+          <p>Field commissioning and substation support, energization, functional and performance testing.</p>
+        </li>
+        <li class="step">
+          <span class="num">05</span>
+          <h3>Turn over &amp; support</h3>
+          <p>As-left documentation, operator walkthroughs, then troubleshooting and upgrades once it's running.</p>
+        </li>
+      </ol>
+      <div class="proof">
+        <p class="kicker">Track record</p>
+        <p class="proof-text">Built a power plant controller from the ground up, covering hardware architecture, code, deployment, testing and validation, while supporting field commissioning and the substation side of the project.</p>
+      </div>
+      <p class="lifecycle-note"><strong>Need just one phase?</strong> That works too. Each step is available on its own, and comes with the context of having done all of them.</p>
+    </div>
+  </section>
+
+  <section id="services" class="alt">
     <div class="wrap">
       <p class="kicker">Services</p>
       <h2>What I do</h2>
-      <p class="intro">Hands-on controls and commissioning work, from the first point-to-point check to the last page of turnover documentation.</p>
+      <p class="intro">Hands-on controls work across the systems that keep the grid and critical facilities running.</p>
       <div class="grid two">
         <article class="card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="16" height="11" rx="2"/><path d="M21 11v3"/><path d="M11 9.5 8.5 13h4l-2.5 3.5"/></svg>
           </div>
           <h3>Battery energy storage</h3>
-          <p>Site controller, EMS and power plant controller commissioning; PCS and BMS integration; functional, performance and capacity testing through commercial operation.</p>
+          <p>Power plant controller, site controller and EMS: hardware architecture, code, testing and commissioning. PCS and BMS integration; functional, performance and capacity testing through commercial operation.</p>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 6 22M12 2l6 20M8 14h8M9.5 8h5M4 22h16"/></svg>
           </div>
           <h3>Substations &amp; interconnection</h3>
-          <p>SCADA and RTU integration, point-to-point checkout, communications testing and energization support alongside the utility.</p>
+          <p>SCADA and RTU configuration and integration, point-to-point checkout, communications testing and energization support alongside the utility.</p>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true">
@@ -238,15 +292,15 @@
     </div>
   </section>
 
-  <section id="approach" class="alt">
+  <section id="approach">
     <div class="wrap">
       <p class="kicker">Approach</p>
       <h2>How I work</h2>
       <p class="intro">A small firm on purpose. You deal directly with the person doing the work.</p>
       <div class="points">
         <div class="point">
-          <h3>You get the person doing the work</h3>
-          <p>The person who scopes the job is the one on site with the laptop and the test plan. No hand-offs to someone you've never met.</p>
+          <h3>The person who wrote it commissions it</h3>
+          <p>The logic on the controller and the person on site with the test plan are the same. No hand-offs to someone you've never met, and no re-learning the system at energization.</p>
         </div>
         <div class="point">
           <h3>Procedures before power</h3>
@@ -264,7 +318,7 @@
     </div>
   </section>
 
-  <section id="name">
+  <section id="name" class="alt">
     <div class="wrap story">
       <div>
         <p class="kicker">The name</p>
@@ -276,7 +330,7 @@
     </div>
   </section>
 
-  <section id="contact" class="alt contact">
+  <section id="contact" class="contact">
     <div class="wrap">
       <p class="kicker">Contact</p>
       <h2>Have a project coming up?</h2>
