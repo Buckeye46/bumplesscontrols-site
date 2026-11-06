@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bumpless LLC | Controls &amp; Commissioning</title>
+<meta name="description" content="Bumpless LLC commissions the control systems behind utility-scale battery storage, substations and critical power. Based in the Houston area, on site wherever the project is.">
+<meta property="og:title" content="Bumpless LLC | Controls &amp; Commissioning">
+<meta property="og:description" content="Commissioning that makes the handoff a non-event: battery storage, substations and critical power.">
+<meta property="og:url" content="https://bumplesscontrols.com/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1b2d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1b2d'/%3E%3Cpath d='M5 21h7c5 0 5-10 10-10h5' fill='none' stroke='%233ddc97' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f4f6f8;
+    --ink: #0f1b2d;
+    --muted: #4a5568;
+    --line: #dde3ea;
+    --accent: #0a7c5a;
+    --accent-ink: #ffffff;
+    --accent-soft: #e6f4ef;
+    --grid: #e3e8ee;
+    --dash: #9aa5b1;
+    --hero: #0f1b2d;
+    --hero-ink: #e7edf5;
+    --hero-muted: #a9b6c8;
+    --hero-line: #24344f;
+    --hero-accent: #3ddc97;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #101a2c;
+      --ink: #e7edf5;
+      --muted: #a3b0c2;
+      --line: #22304a;
+      --accent: #3ddc97;
+      --accent-ink: #06261a;
+      --accent-soft: #0f2a22;
+      --grid: #1c2a40;
+      --dash: #5d6b80;
+      --hero: #070d18;
+      --hero-line: #1c2a40;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+  /* header */
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--hero) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--hero-line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--hero-ink); }
+  .brand b { font-size: 19px; letter-spacing: -0.01em; }
+  .brand span { font: 500 11px var(--mono); color: var(--hero-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  nav.links { display: flex; gap: 22px; }
+  nav.links a { color: var(--hero-muted); text-decoration: none; font-size: 15px; }
+  nav.links a:hover { color: var(--hero-ink); }
+  @media (max-width: 560px) { nav.links a:not(.cta-link) { display: none; } }
+
+  /* hero */
+  .hero { background: var(--hero); color: var(--hero-ink); padding: 72px 0 80px; }
+  .hero .wrap { display: grid; gap: 48px; align-items: center; }
+  @media (min-width: 900px) { .hero .wrap { grid-template-columns: 1.05fr 1fr; } }
+  .eyebrow { font: 500 12px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--hero-accent); margin: 0 0 18px; }
+  .hero h1 { font-size: clamp(34px, 5.2vw, 54px); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 20px; }
+  .hero p.lead { font-size: 19px; color: var(--hero-muted); margin: 0 0 32px; max-width: 34em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .btn.primary { background: var(--hero-accent); color: #06261a; }
+  .btn.primary:hover { filter: brightness(1.07); }
+  .btn.ghost { border-color: var(--hero-line); color: var(--hero-ink); }
+  .btn.ghost:hover { border-color: var(--hero-muted); }
+
+  .trend { width: 100%; height: auto; display: block; }
+  .trend-card { border: 1px solid var(--hero-line); border-radius: 14px; padding: 18px 18px 12px; background: rgba(255,255,255,0.02); }
+  .trend-card figcaption { font: 12px/1.5 var(--mono); color: var(--hero-muted); margin-top: 8px; }
+
+  /* sections */
+  section { padding: 88px 0; }
+  section.alt { background: var(--bg-alt); }
+  h2 { font-size: clamp(28px, 3.6vw, 38px); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 14px; }
+  .kicker { font: 500 12px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  .intro { color: var(--muted); max-width: 40em; margin: 0 0 44px; }
+
+  .grid { display: grid; gap: 18px; }
+  @media (min-width: 720px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+  section.alt .card { background: var(--bg); }
+  .card h3 { margin: 14px 0 8px; font-size: 20px; letter-spacing: -0.01em; }
+  .card p { margin: 0; color: var(--muted); }
+  .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  .icon svg { width: 22px; height: 22px; }
+
+  .points { display: grid; gap: 28px 40px; }
+  @media (min-width: 720px) { .points { grid-template-columns: 1fr 1fr; } }
+  .point { border-left: 3px solid var(--accent); padding-left: 18px; }
+  .point h3 { margin: 0 0 6px; font-size: 19px; }
+  .point p { margin: 0; color: var(--muted); }
+
+  .story { display: grid; gap: 40px; align-items: center; }
+  @media (min-width: 900px) { .story { grid-template-columns: 1fr 1fr; } }
+  .story p { color: var(--muted); margin: 0 0 14px; }
+  .story blockquote { margin: 0; padding: 26px 28px; border-radius: 14px; background: var(--accent-soft); font-size: 20px; line-height: 1.45; letter-spacing: -0.01em; }
+
+  .contact { text-align: center; }
+  .contact .intro { margin-left: auto; margin-right: auto; }
+  .contact .mail {
+    display: inline-block; font-size: clamp(20px, 3.4vw, 30px); font-weight: 650; letter-spacing: -0.01em;
+    color: var(--ink); text-decoration: none; border-bottom: 3px solid var(--accent); padding-bottom: 4px;
+    overflow-wrap: anywhere;
+  }
+  .contact .mail:hover { color: var(--accent); }
+  .contact .who { margin-top: 28px; color: var(--muted); font-size: 15px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  :focus-visible { outline: 3px solid var(--hero-accent); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bumpless LLC home">
+      <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
+        <path d="M2 17h12V5h18" fill="none" stroke="#5d6b80" stroke-width="1.6" stroke-dasharray="3 3"/>
+        <path d="M2 17h8c6 0 6-12 12-12h10" fill="none" stroke="#3ddc97" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <b>Bumpless</b><span>LLC</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#approach">How I work</a>
+      <a class="cta-link" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Controls &amp; commissioning &middot; Houston, Texas</p>
+        <h1>Commissioning that makes the handoff a non&#8209;event.</h1>
+        <p class="lead">Bumpless LLC tests and commissions the control systems behind utility-scale battery storage, substations and critical power, so energization, testing and turnover stay on schedule.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:dylan.davey@bumplesscontrols.com?subject=Project%20inquiry">Email Dylan</a>
+          <a class="btn ghost" href="#services">See services</a>
+        </div>
+      </div>
+      <figure class="trend-card" style="margin:0">
+        <svg class="trend" viewBox="0 0 480 260" role="img" aria-labelledby="trend-t trend-d">
+          <title id="trend-t">A bumpless transfer</title>
+          <desc id="trend-d">Trend of a process variable through a manual-to-automatic transfer. The dashed trace jumps and rings at the transfer; the solid trace passes through it without a disturbance and moves smoothly to the new setpoint.</desc>
+          <g stroke="#1c2a40" stroke-width="1">
+            <line x1="20" y1="50" x2="460" y2="50"/><line x1="20" y1="90" x2="460" y2="90"/>
+            <line x1="20" y1="130" x2="460" y2="130"/><line x1="20" y1="170" x2="460" y2="170"/>
+            <line x1="20" y1="210" x2="460" y2="210"/>
+          </g>
+          <line x1="200" y1="24" x2="200" y2="226" stroke="#5d6b80" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="208" y="36" fill="#a9b6c8" font-family="ui-monospace, Consolas, monospace" font-size="11" letter-spacing="1">MANUAL &#8594; AUTO</text>
+          <path d="M20 170 H200 L208 118 L218 206 L230 140 L244 188 L258 156 L272 178 L290 166 C330 166 336 56 372 70 S430 96 460 90"
+                fill="none" stroke="#6b7a90" stroke-width="2" stroke-dasharray="5 5"/>
+          <path d="M20 170 H300 C350 170 360 90 410 90 H460" fill="none" stroke="#3ddc97" stroke-width="3" stroke-linecap="round"/>
+          <g font-family="ui-monospace, Consolas, monospace" font-size="11" fill="#a9b6c8">
+            <line x1="24" y1="246" x2="48" y2="246" stroke="#3ddc97" stroke-width="3" stroke-linecap="round"/>
+            <text x="56" y="250">bumpless</text>
+            <line x1="140" y1="246" x2="164" y2="246" stroke="#6b7a90" stroke-width="2" stroke-dasharray="5 5"/>
+            <text x="172" y="250">with a bump</text>
+          </g>
+        </svg>
+        <figcaption>The name comes from the bumpless transfer: changing who's in control without disturbing the process.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <p class="kicker">Services</p>
+      <h2>What I do</h2>
+      <p class="intro">Hands-on controls and commissioning work, from the first point-to-point check to the last page of turnover documentation.</p>
+      <div class="grid two">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="16" height="11" rx="2"/><path d="M21 11v3"/><path d="M11 9.5 8.5 13h4l-2.5 3.5"/></svg>
+          </div>
+          <h3>Battery energy storage</h3>
+          <p>Site controller, EMS and power plant controller commissioning; PCS and BMS integration; functional, performance and capacity testing through commercial operation.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 6 22M12 2l6 20M8 14h8M9.5 8h5M4 22h16"/></svg>
+          </div>
+          <h3>Substations &amp; interconnection</h3>
+          <p>SCADA and RTU integration, point-to-point checkout, communications testing and energization support alongside the utility.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.5"/><rect x="4" y="14" width="16" height="7" rx="1.5"/><path d="M8 6.5h.01M8 17.5h.01M12 10v4"/></svg>
+          </div>
+          <h3>Data centers &amp; critical power</h3>
+          <p>Controls checkout and integrated systems testing for switchgear, UPS and generator sequences, proven before the load depends on them.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13l2 2 4-4"/></svg>
+          </div>
+          <h3>Test procedures &amp; turnover</h3>
+          <p>Written test plans, punch-list closure and as-left documentation that an operations team can actually use.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="alt">
+    <div class="wrap">
+      <p class="kicker">Approach</p>
+      <h2>How I work</h2>
+      <p class="intro">A small firm on purpose. You deal directly with the person doing the work.</p>
+      <div class="points">
+        <div class="point">
+          <h3>You get the person doing the work</h3>
+          <p>The person who scopes the job is the one on site with the laptop and the test plan. No hand-offs to someone you've never met.</p>
+        </div>
+        <div class="point">
+          <h3>Procedures before power</h3>
+          <p>Every test is written, reviewed and agreed before anything is energized, so there are no surprises on test day.</p>
+        </div>
+        <div class="point">
+          <h3>On site wherever the project is</h3>
+          <p>Based in the Houston area and used to living on the road, across the U.S. and abroad.</p>
+        </div>
+        <div class="point">
+          <h3>Simple to onboard</h3>
+          <p>W-9 and vendor paperwork turned around quickly, with clear scopes and plain invoices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="name">
+    <div class="wrap story">
+      <div>
+        <p class="kicker">The name</p>
+        <h2>Why &ldquo;Bumpless&rdquo;</h2>
+        <p>In control systems, a bumpless transfer switches a process from manual to automatic, or from one controller to another, without a disturbance in the output.</p>
+        <p>It's the standard for every handover on a project: construction to commissioning, and commissioning to operations.</p>
+      </div>
+      <blockquote>When the switch happens and nobody notices, that's the job done right.</blockquote>
+    </div>
+  </section>
+
+  <section id="contact" class="alt contact">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h2>Have a project coming up?</h2>
+      <p class="intro">Tell me about the site, the schedule and where you need help.</p>
+      <a class="mail" href="mailto:dylan.davey@bumplesscontrols.com?subject=Project%20inquiry">dylan.davey@bumplesscontrols.com</a>
+      <p class="who">Dylan Davey, Principal &middot; Houston, Texas area &middot; Available nationwide</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Bumpless LLC, a Texas limited liability company</span>
+    <a href="mailto:dylan.davey@bumplesscontrols.com">dylan.davey@bumplesscontrols.com</a>
+  </div>
+</footer>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
